@@ -1,0 +1,13 @@
+/* HoneyHaus preloader (from client concept; clean logo without Closet/Hair line) */
+html.hh-loading,html.hh-loading body{overflow:hidden}
+.hh-preloader{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 40%,#503023 0%,#321d13 55%,#1d100b 100%);overflow:hidden}
+.hh-content{width:min(76vw,310px);text-align:center;animation:hh-enter 1s ease both}
+.hh-logo{width:100%;aspect-ratio:958/452;background:url('assets/logo-cream.png') center/contain no-repeat;position:relative}
+.hh-logo:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,#fff5dfaa 50%,transparent 65%);background-size:250% 100%;-webkit-mask:url('assets/logo-cream.png') center/contain no-repeat;mask:url('assets/logo-cream.png') center/contain no-repeat;animation:hh-shine 2s ease-in-out infinite}
+.hh-track{height:2px;width:62%;margin:36px auto 0;background:#ebd7c626;overflow:hidden;border-radius:2px}
+.hh-track:before{content:'';display:block;width:45%;height:100%;background:linear-gradient(90deg,transparent,#ebd7c6,transparent);animation:hh-load 1.2s ease-in-out infinite}
+.hh-preloader.is-hidden{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .65s,visibility .65s}
+@keyframes hh-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes hh-shine{0%,15%{background-position:100% 0}75%,100%{background-position:-100% 0}}
+@keyframes hh-load{from{transform:translateX(-110%)}to{transform:translateX(330%)}}
+@media(prefers-reduced-motion:reduce){.hh-content,.hh-logo:after,.hh-track:before{animation:none}.hh-logo:after{display:none}.hh-track:before{transform:translateX(60%)}}
