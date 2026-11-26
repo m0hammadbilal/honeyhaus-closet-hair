@@ -1,0 +1,57 @@
+/* HoneyHaus amendments (client round 2): logo, labels, new sections */
+
+/* Header logo: plain HoneyHaus mark only (no Closet / Hair line) */
+.on-home:not(.scrolled) .mast .realbrand img{content:url('assets/logo-cream.png');width:118px;height:auto;filter:none}
+.on-home.scrolled .mast .realbrand img{content:url('assets/logo-brown.png');width:84px;height:auto;filter:none}
+@media(max-width:760px){.on-home:not(.scrolled) .mast .realbrand img{width:88px}.on-home.scrolled .mast .realbrand img{width:66px}}
+
+/* Ribbon with star separators */
+.spark .ribbon-belt span{font:400 19px var(--serif);margin-right:0}
+.spark .ribbon-belt i{font-style:normal;margin:0 26px;color:#c3a27d;font-size:15px;align-self:center}
+
+/* Category circles */
+.discnav strong{white-space:normal}
+.discnav small{letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+
+/* Second Skin story block */
+.story-grid small{display:block;font:500 11px var(--sans);letter-spacing:.2em;color:#735841;margin-bottom:6px}
+
+/* Product cards: price under name */
+.pieceinfo .price{margin:5px 0 8px;font:500 14px var(--sans);color:#5a4636;letter-spacing:.02em}
+
+/* Door banners: tagline, no icons */
+.doors>a>div{display:grid;justify-items:center;padding:0 18px;text-shadow:0 1px 14px rgba(30,15,8,.35)}
+.doors p{margin:0 0 18px;font:400 15px/1.4 var(--sans);letter-spacing:.04em;color:#fff6ea}
+.doors span{letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+
+/* Services */
+.services a{justify-content:center}
+
+/* Footer: intro row now only label + back to top */
+.foot-intro{margin-bottom:26px}
+
+/* FAQ page */
+.hh-faq{max-width:760px}
+.hh-faq details{border-bottom:1px solid #b6a69665;padding:18px 0}
+.hh-faq summary{font:400 22px/1.25 var(--serif);cursor:pointer;display:flex;align-items:center;gap:10px;list-style:none}
+.hh-faq summary::-webkit-details-marker{display:none}
+.hh-faq summary:after{content:'+';margin-left:auto;font:20px var(--sans)}
+.hh-faq details[open] summary:after{content:'\2212'}
+.hh-faq p{font-size:16px;line-height:1.65;margin:12px 0 0}
+
+/* Five featured products */
+.products-four{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px 14px}
+@media(max-width:1000px){.products-four{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.products-four{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px}.products-four .piece:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 5px);justify-self:center}}
+
+/* Door banners: stronger scrim so the tagline stays legible on the light photo */
+.doors a:before{background:linear-gradient(180deg,rgba(43,25,14,.18),rgba(43,25,14,.55))}
+
+/* Longer announcement line: allow two lines on small screens */
+@media(max-width:760px){
+ .topline,.on-home .topline{height:auto;min-height:25px;padding:5px 12px;line-height:1.35;font-size:7.5px;letter-spacing:1px;text-align:center;box-sizing:border-box}
+ .on-home .mast{top:34px}
+}
+
+/* Visible keyboard focus */
+a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #b8873a;outline-offset:3px}
